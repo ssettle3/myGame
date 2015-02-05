@@ -1,3 +1,2 @@
-## Yo, I'm a Readme
-
-You should probably update me so people looking at your code have an idea what it is being used for :)
+# Simple JavaScript based game
+## The Iron Yard Assignment 15
