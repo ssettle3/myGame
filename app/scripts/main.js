@@ -85,44 +85,44 @@ Alien.prototype.name = 'Alien Invader';
 // Player Instances
 
 var wraith1 = new Player ({
- name: 'Bobby',
+ name: 'Wraith 1',
  unit: $('#g1')
 });
 
 var wraith2 = new Player ({
- name: 'Jack',
+ name: 'Wraith 2',
  unit: $('#g2')
 });
 
 var wraith3 = new Player ({
- name: 'Orlando',
+ name: 'Wraith 3',
  unit: $('#g3') 
 });
 
 var wraith4 = new Player ({
- name: 'Mikey',
+ name: 'Wraith 4',
  unit: $('#g4')
 });
 
 // Alien Instances
 
 var blkmuk1 = new Alien ({
-	name: 'Xandar',
+	name: 'Black Muk 1',
  	unit: $('#b1')
 });
 
 var blkmuk2 = new Alien ({
-	name: 'Zeektik',
+	name: 'Black Muk 2',
  	unit: $('#b2')
 });
 
 var blkmuk3 = new Alien ({
-	name: 'Kryptok',
+	name: 'Black Muk 3',
  	unit: $('#b3')
 });
 
 var blkmuk4 = new Alien ({
-	name: 'Plyfox',
+	name: 'Black Muk 4',
  	unit: $('#b4')
 });
 
@@ -134,26 +134,18 @@ var blkmuk4 = new Alien ({
 
 attackCmd1.on('click', function () {
   wraith1.attack(blkmuk1);
-  console.log('You fired your cannons at ' + blkmuk1.name);
-  console.log(blkmuk1.health);
 });
 
 attackCmd2.on('click', function () {
   wraith2.attack(blkmuk2);
-  console.log('You fired your cannons at ' + blkmuk2.name);
-  console.log(blkmuk2.health);
 });
 
 attackCmd3.on('click', function () {
   wraith3.attack(blkmuk3);
-  console.log('You fired your cannons at ' + blkmuk3.name);
-  console.log(blkmuk3.health);
 });
 
 attackCmd4.on('click', function () {
   wraith4.attack(blkmuk4);
-  console.log('You fired your cannons at ' + blkmuk4.name);
-  console.log(blkmuk4.health);
 });
 
 
@@ -167,10 +159,16 @@ var underAttack =  function (shooter,victim){
 	victim.health -= damageDealt;
 
 	// Retaliation!
-	_.delay(underAttack, 500, victim, shooter);
-		console.log('Your men are underfire!')
-		console.log(shooter.health);
+	if (victim instanceof Alien){
 
+			if (victim.health > 0){
+				underAttack(victim, shooter);
+				console.log(shooter.name + ' fire cannons at ' + victim.name);
+				console.log(victim.name + ' returns fire at ' + shooter.name);
+				console.log(shooter.name + "'s health is now " + shooter.health);
+				console.log(victim.name + "'s health is now " + victim.health);
+			};
+	};
 
 
 
