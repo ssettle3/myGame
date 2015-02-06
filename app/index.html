@@ -20,15 +20,94 @@
 
   </head>
   <body>
+  <!-- Main Menu Screen -->
     <div class="menu-container">
       <div class="menu-backdrop">
         <h1> Battle For Earth </h1>
         <h2>Help Save The Planet!</h2>
         <div class="start">
           <button class="begin" id="begin">
-            Let's Do This!
+            Take to the Sky!
           </button>
         </div>
+      </div>
+    </div> 
+
+    <!-- Start of Battle Screen -->
+    <div class="battle-container">
+      <div class="battle-screen">
+        <div class="general">
+          <img class='gen' src="/images/general.jpg">
+          <p>
+            "Alright Sargeant - this is our lasts stand! Take command of the last squadron and take these bastards out! Be careful sargeant, they look stronger than we do.. be sure to pick your attacks strategically!" 
+          </p>
+          <button class="fight"> 
+            For Mother Earth! 
+          </button>
+        </div>
+        <div class="good-guys">
+          <div class="gship1" id="g1">
+            <div>
+              <span id='p1Health' value='100'></span>
+              <span>%</span>
+            </div>
+          </div>
+          <div class="gship1" id="g2">
+             <div>
+              <span id='p2Health' value='100'></span>
+              <span>%</span>
+            </div>
+          </div>
+          <div class="gship1" id="g3">
+            <div>
+              <span id='p3Health' value='100'></span>
+              <span>%</span>
+            </div>
+          </div>
+          <div class="gship1" id="g4">
+            <div>
+              <span id='p4Health' value='100'></span>
+              <span>%</span>
+            </div>
+          </div>
+        </div>
+        <div class="enemies">
+          <div class="bship1" id="b1">
+            <button id='attack1'>A</button>
+            <div>
+              <span id='e1Health' value='100'></span>
+              <span>%</span>
+            </div>
+          </div>
+          <div class="bship1" id="b2">
+            <button id='attack2'>A</button>
+            <div>
+              <span id='e2Health' value='100'></span>
+              <span>%</span>
+            </div>
+          </div>
+          <div class="bship1" id="b3">
+            <button id='attack3'>A</button>
+            <div>
+              <span id='e3Health' value='100'></span>
+              <span>%</span>
+            </div>
+          </div>
+          <div class="bship1" id="b4">
+            <button id='attack4'>A</button>
+            <div>
+              <span id='e4Health' value='100'></span>
+              <span>%</span>
+            </div>
+          </div>
+        </div>
+        <button id="inst">Instructions</button>
+      </div>
+      <div class="instructions">
+        <p>Just click on the enemy ship you want to attack and your ships will follow orders!</p>
+        <p>This is turn base game in which only one ship can attack/be attacked at one time.</p>
+        <button id="done">Done</button>
+
       </div>
     </div>
 

@@ -33,7 +33,8 @@ body {
       color: gold;
       border: 1px solid gold;
       border-radius: 100px;
-      margin: 300px 0 0 0;
+      padding: 10px;
+      margin: 350px 0 0 0;
     }  
     button:hover{
           background: yellow;
@@ -44,4 +45,145 @@ body {
 .hidden{
   display: none;
 
+}
+
+// =============
+// Battle Screen
+// =============
+
+.battle-container{
+  margin-top: 15px;
+}
+.battle-screen{
+  display: none;
+    #inst{
+      background: black;
+      color: gold;
+      border: 1px solid gold;
+      border-radius: 100px;
+      padding: 10px;
+      margin: 10px 0 0 0;
+    }
+    #inst:hover{
+      color: black;
+      background: yellow;
+    }
+}
+.battle-screen-active{
+  background-image: url('/images/battle-screen.jpg');
+  display: block;
+  width: 1200px;
+  height: 700px;
+  margin: 0 auto;
+  border: 4px double gold;
+  position: relative;
+}
+
+// General Prompt
+
+.general{
+  width: 1000px;
+  height: 260px;
+  background-color: black;
+  border: 4px double gold;
+  border-radius: 5px;
+  margin: 100px 0px 0px 100px;
+  position: absolute;
+  z-index: 100;
+    img{
+      float: left;
+      margin: 13px 5px 0px 10px;
+      border: 1px solid gold;
+    }
+    button{
+      background: black;
+      color: gold;
+      border: 1px solid gold;
+      border-radius: 100px;
+      padding: 10px;
+      margin: 30px 0 0 0;
+    }  
+     button:hover{
+          background: yellow;
+          color: black;
+          border: 1px solid black;
+    }
+}
+.good-guys{
+  float: right;
+}
+.bship1{
+  background: url('/images/icons.png') no-repeat -268px -123px;
+  width: 124px;
+  height: 101px;
+  transform: rotate(180deg);
+  margin: 50px;
+     div{
+      display: inline-block;
+      padding: 5px;
+      margin: 30px 0px 0px 65px;
+      color: lime;
+      transform: rotate(180deg);
+    }
+    button{
+      color: gold;
+      background: black;
+      border-radius: 100%;
+      padding: 5px;
+      border: 1px solid gold;
+      transform: rotate(180deg);
+      margin-right: 100px;
+    }
+    button:hover{
+      color: black;
+      background: gold;
+    }
+}
+
+.enemies{
+  float: left;
+    div:hover{
+      cursor: pointer;
+    }
+}
+
+.gship1{
+  background: url('/images/icons.png') no-repeat -286px -5px;
+  width: 140px;
+  height: 115px;
+  margin: 40px;
+    div{
+      padding: 5px;
+      margin-left: 78px;
+      color: lime;
+    }
+}
+
+// ===================
+// Instructions Screen
+// ===================
+
+.instructions{
+  display: none;
+}
+.instructions-active{
+  display: block;
+  position: absolute;
+  margin: -500px 100px 0px 350px;
+  z-index: 5;
+  background-color: black;
+  border: 4px double gold;
+  padding: 50px;
+    button{
+      background: black;
+      color: gold;
+      border: 1px solid gold;
+      border-radius: 100px;
+      padding: 10px;
+      margin: 30px 0 0 0;
+    }
+    button:hover{
+      background: yellow;
+      color: black;
+    }
 }
