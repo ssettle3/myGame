@@ -3,6 +3,7 @@
 
 
 Resources:
-http://www.spritecow.com/
-http://www.spriters-resource.com/pc_computer/starcraft/
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof
+1 - http://www.spritecow.com/
+2 - http://www.spriters-resource.com/
+3 - https://developer.mozilla.org/
+4 - http://stackoverflow.com/
