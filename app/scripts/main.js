@@ -109,22 +109,22 @@ var wraith4 = new Player ({
 
 var blkmuk1 = new Alien ({
 	name: 'Black Muk 1',
- 	unit: $('#b1')
+ 	unit: $('.bship1')
 });
 
 var blkmuk2 = new Alien ({
 	name: 'Black Muk 2',
- 	unit: $('#b2')
+ 	unit: $('.bship2')
 });
 
 var blkmuk3 = new Alien ({
 	name: 'Black Muk 3',
- 	unit: $('#b3')
+ 	unit: $('.bship3')
 });
 
 var blkmuk4 = new Alien ({
 	name: 'Black Muk 4',
- 	unit: $('#b4')
+ 	unit: $('.bship4')
 });
 
 // =============================
@@ -160,52 +160,43 @@ var selectWraith = function(){
 
 // A random unit attacked a random unit
 attackCmd1.on('click', function (){
-	selectWraith().attack(selectAlien());
+		selectWraith().attack(selectAlien());
 });
-
-// attackCmd1.on('click', function () {
-//   wraith1.attack(blkmuk1);
-// });
-
-// attackCmd2.on('click', function () {
-//   wraith2.attack(blkmuk2);
-// });
-
-// attackCmd3.on('click', function () {
-//   wraith3.attack(blkmuk3);
-// });
-
-// attackCmd4.on('click', function () {
-//   wraith4.attack(blkmuk4);
-// });
-
 
 // Function of Attacking
 var underAttack =  function (shooter,victim){
 
 	// Dealing Damage
-	damageDealt = _.random(5,15)
+	if (shooter.health > 0){
+		damageDealt = _.random(20,35)
+	} else {
+		damageDealt = 0;
+		console.log(shooter.name + " is dead!")
+	};
 
 	// Reflecting the Damage
 	victim.health -= damageDealt;
 
 	// Retaliation!
 	if (victim instanceof Alien){
+		console.log(shooter.name + ' fire cannons at ' + victim.name);
+
 
 			if (victim.health > 0){
 				underAttack(victim, shooter);
-				console.log(shooter.name + ' fire cannons at ' + victim.name);
 				console.log(victim.name + ' returns fire at ' + shooter.name);
 				console.log(shooter.name + "'s health is now " + shooter.health);
 				console.log(victim.name + "'s health is now " + victim.health);
-			};
+			} else {
+				console.log(victim.name + " was just shot down!")
+			}
 
-			if (victim.health <= 0){
-				console.log(victim.name + " is dead!")
-			}
 			if (shooter.health <= 0){
-				console.log(shooter.name + " is dead!")
+				console.log(shooter.name + " was just shot down!")
 			}
+	
+
+
 	};
 
 

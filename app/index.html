@@ -35,6 +35,7 @@
 
     <!-- Start of Battle Screen -->
     <div class="battle-container">
+      <button id='attack1'>A T T A C K !</button>
       <div class="battle-screen">
         <div class="general">
           <img class='gen' src="/images/general.jpg">
@@ -48,55 +49,51 @@
         <div class="good-guys">
           <div class="gship1" id="g1">
             <div>
-              <span id='p1Health' value='100'></span>
+              <input id="g1Health" type="text" value="100">
               <span>%</span>
             </div>
           </div>
           <div class="gship1" id="g2">
              <div>
-              <span id='p2Health' value='100'></span>
+              <input id="g2Health" type="text" value="100">
               <span>%</span>
             </div>
           </div>
           <div class="gship1" id="g3">
             <div>
-              <span id='p3Health' value='100'></span>
+              <input id="g3Health" type="text" value="100">
               <span>%</span>
             </div>
           </div>
           <div class="gship1" id="g4">
             <div>
-              <span id='p4Health' value='100'></span>
+              <input id="g4Health" type="text" value="100">
               <span>%</span>
             </div>
           </div>
         </div>
         <div class="enemies">
           <div class="bship1" id="b1">
-            <button id='attack1'>A</button>
             <div>
-              <span id='e1Health' value='100'></span>
+              <input id="b1Health" type="text" value="100">
               <span>%</span>
             </div>
           </div>
           <div class="bship1" id="b2">
-            <button id='attack2'>A</button>
             <div>
-              <span id='e2Health' value='100'></span>
+              <input id="b2Health" type="text" value="100">
               <span>%</span>
             </div>
           </div>
           <div class="bship1" id="b3">
-            <button id='attack3'>A</button>
             <div>
-              <span id='e3Health' value='100'></span>
+              <input id="b3Health" type="text" value="100">
               <span>%</span>
             </div>
           </div>
           <div class="bship1" id="b4">
-            <button id='attack4'>A</button>
             <div>
-              <span id='e4Health' value='100'></span>
+              <input id="b4Health" type="text" value="100">
               <span>%</span>
             </div>
           </div>
@@ -104,7 +101,7 @@
         <button id="inst">Instructions</button>
       </div>
       <div class="instructions">
-        <p>Just click on the enemy ship you want to attack and your ships will follow orders!</p>
+        <p>Just click on the attack button to attack and your ships will follow orders!</p>
         <p>This is turn base game in which only one ship can attack/be attacked at one time.</p>
         <button id="done">Done</button>
 
