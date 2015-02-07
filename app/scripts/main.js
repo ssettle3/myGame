@@ -33,16 +33,14 @@ $('#done').on('click', function(){
 // =====================
 
 // Player Health
-var p1Health = $('#p1Health'); 
-var p2Health = $('#p2Health'); 
-var p3Health = $('#p3Health'); 
-var p4Health = $('#p4Health'); 
+var p1Health = $('#g1Health'); 
+var p2Health = $('#g2Health'); 
+var p3Health = $('#g3Health'); 
+var p4Health = $('#g4Health'); 
 
-// Corresponding Button to Each Bad Guy Ship
+// Attack Button
 var attackCmd1 = $('#attack1')
-var attackCmd2 = $('#attack2')
-var attackCmd3 = $('#attack3')
-var attackCmd4 = $('#attack4')
+
 
 // ================
 //   Constructors
@@ -134,6 +132,17 @@ var blkmuk4 = new Alien ({
 var arrWraiths = [wraith1, wraith2, wraith3, wraith4];
 var arrAliens = [blkmuk1, blkmuk2, blkmuk3, blkmuk4];
 
+// Winning or Loose Array
+var zeroUnits = [0, 0, 0, 0];
+
+// Check for Health
+var CkAliens = arrAliens.map(function(health){
+	return health.health
+});
+var CkWraiths = arrWraiths.map(function(health){
+	return health.health
+});
+
 // Function to randomly shuffle array for who to attack
 
 var randomAlien = function(){
@@ -183,36 +192,37 @@ var underAttack =  function (shooter,victim){
     victim.unit.find('input').val(victim.health);
 	} else {
 		victim.unit.find('input').val('DEAD!');
-
 	}
 
 	// Retaliation!
-	if (victim instanceof Alien){
+	if (victim.health > 0){
 		console.log(shooter.name + ' fire cannons at ' + victim.name);
+		console.log(victim.name + "'s health is now " + victim.health);
 
-
-			if (victim.health > 0){
-
+			if (victim instanceof Alien){
 				underAttack(victim, shooter);
-				console.log(victim.name + ' returns fire at ' + shooter.name);
-				console.log(shooter.name + "'s health is now " + shooter.health);
-				console.log(victim.name + "'s health is now " + victim.health);
-			} else {
-
-				console.log(victim.name + " was just shot down!")
-			}
-
-			if (shooter.health <= 0){
 				
-				console.log(shooter.name + " was just shot down!")
-			}
+				if (victim.health <= 0){
+					console.log(victim.name + " was just shot down!")
+				}		
+			}	
+	 
+	} else {
+
+		if (victim.health < 0){
+			victim.unit.css('background', 'transparent');
+		}
+	
+	} 
+
+
+
+
+	
 	
 
-
-	};
-
-
 };
+
 
 
 
