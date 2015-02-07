@@ -109,22 +109,22 @@ var wraith4 = new Player ({
 
 var blkmuk1 = new Alien ({
 	name: 'Black Muk 1',
- 	unit: $('.bship1')
+ 	unit: $('#b1')
 });
 
 var blkmuk2 = new Alien ({
 	name: 'Black Muk 2',
- 	unit: $('.bship2')
+ 	unit: $('#b2')
 });
 
 var blkmuk3 = new Alien ({
 	name: 'Black Muk 3',
- 	unit: $('.bship3')
+ 	unit: $('#b3')
 });
 
 var blkmuk4 = new Alien ({
 	name: 'Black Muk 4',
- 	unit: $('.bship4')
+ 	unit: $('#b4')
 });
 
 // =============================
@@ -177,21 +177,33 @@ var underAttack =  function (shooter,victim){
 	// Reflecting the Damage
 	victim.health -= damageDealt;
 
+
+	//Display Health Update
+	if(victim.health > 0){  
+    victim.unit.find('input').val(victim.health);
+	} else {
+		victim.unit.find('input').val('DEAD!');
+
+	}
+
 	// Retaliation!
 	if (victim instanceof Alien){
 		console.log(shooter.name + ' fire cannons at ' + victim.name);
 
 
 			if (victim.health > 0){
+
 				underAttack(victim, shooter);
 				console.log(victim.name + ' returns fire at ' + shooter.name);
 				console.log(shooter.name + "'s health is now " + shooter.health);
 				console.log(victim.name + "'s health is now " + victim.health);
 			} else {
+
 				console.log(victim.name + " was just shot down!")
 			}
 
 			if (shooter.health <= 0){
+				
 				console.log(shooter.name + " was just shot down!")
 			}
 	
@@ -203,10 +215,6 @@ var underAttack =  function (shooter,victim){
 };
 
 
-
-// ========================
-//  Getting to show Health
-// ========================
 
 
 

@@ -56,10 +56,11 @@ body {
   position: relative;
 }
 input{
-  background: black;
-  border: none;
-  width: 30px;
+      background: transparent;
+      border: none;
+      width: 50px;
 }
+
 #attack1{
   color: gold;
   background: black;
@@ -133,6 +134,9 @@ input{
 }
 .good-guys{
   float: right;
+    input{
+      margin-left: 60px;
+    }
 }
 .bship1{
   background: url('/images/icons.png') no-repeat -268px -123px;
@@ -153,6 +157,11 @@ input{
   float: left;
     div:hover{
       cursor: pointer;
+    }
+    input{
+      transform: rotate(180deg); 
+      margin-left: 100px; 
+      margin-top: 50px;
     }
 }
 
