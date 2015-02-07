@@ -27,8 +27,9 @@ $('#inst').on('click', function(){
 $('#done').on('click', function(){
 	$('.instructions').removeClass('instructions-active');
 });
+
 // =====================
-//   Overall Variables
+//     Key Variables
 // =====================
 
 // Player Health
@@ -38,10 +39,10 @@ var p3Health = $('#p3Health');
 var p4Health = $('#p4Health'); 
 
 // Corresponding Button to Each Bad Guy Ship
-attackCmd1 = $('#attack1')
-attackCmd2 = $('#attack2')
-attackCmd3 = $('#attack3')
-attackCmd4 = $('#attack4')
+var attackCmd1 = $('#attack1')
+var attackCmd2 = $('#attack2')
+var attackCmd3 = $('#attack3')
+var attackCmd4 = $('#attack4')
 
 // ================
 //   Constructors
@@ -79,10 +80,10 @@ Alien.prototype.type = 'Black-Muk Adv. Fighter';
 Alien.prototype.name = 'Alien Invader';
 
 // ================
-//   Instances
+//    Instances
 // ================
 
-// Player Instances
+// Wraith Instances
 
 var wraith1 = new Player ({
  name: 'Wraith 1',
@@ -126,27 +127,57 @@ var blkmuk4 = new Alien ({
  	unit: $('#b4')
 });
 
+// =============================
+//  Array Of Aliens and Wraiths
+// =============================
+
+var arrWraiths = [wraith1, wraith2, wraith3, wraith4];
+var arrAliens = [blkmuk1, blkmuk2, blkmuk3, blkmuk4];
+
+// Function to randomly shuffle array for who to attack
+
+var randomAlien = function(){
+ 	return _.shuffle(arrAliens);
+};
+
+var selectAlien = function(){
+	return randomAlien()[0];
+}
+
+var randomWraith = function(){
+	return _.shuffle(arrWraiths);
+}
+
+var selectWraith = function(){
+	return randomWraith()[0];
+}
+
 // ================
-//   Actions
+//     Actions
 // ================
 
 // Attack 
 
-attackCmd1.on('click', function () {
-  wraith1.attack(blkmuk1);
+// A random unit attacked a random unit
+attackCmd1.on('click', function (){
+	selectWraith().attack(selectAlien());
 });
 
-attackCmd2.on('click', function () {
-  wraith2.attack(blkmuk2);
-});
+// attackCmd1.on('click', function () {
+//   wraith1.attack(blkmuk1);
+// });
 
-attackCmd3.on('click', function () {
-  wraith3.attack(blkmuk3);
-});
+// attackCmd2.on('click', function () {
+//   wraith2.attack(blkmuk2);
+// });
 
-attackCmd4.on('click', function () {
-  wraith4.attack(blkmuk4);
-});
+// attackCmd3.on('click', function () {
+//   wraith3.attack(blkmuk3);
+// });
+
+// attackCmd4.on('click', function () {
+//   wraith4.attack(blkmuk4);
+// });
 
 
 // Function of Attacking
@@ -168,17 +199,23 @@ var underAttack =  function (shooter,victim){
 				console.log(shooter.name + "'s health is now " + shooter.health);
 				console.log(victim.name + "'s health is now " + victim.health);
 			};
-	};
 
+			if (victim.health <= 0){
+				console.log(victim.name + " is dead!")
+			}
+			if (shooter.health <= 0){
+				console.log(shooter.name + " is dead!")
+			}
+	};
 
 
 };
 
 
 
-// ===================
-// Getting to show Health
-// ===================
+// ========================
+//  Getting to show Health
+// ========================
 
 
 
