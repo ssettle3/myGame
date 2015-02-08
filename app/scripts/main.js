@@ -132,9 +132,6 @@ var blkmuk4 = new Alien ({
 var arrWraiths = [wraith1, wraith2, wraith3, wraith4];
 var arrAliens = [blkmuk1, blkmuk2, blkmuk3, blkmuk4];
 
-// Winning or Loose Array
-var zeroUnits = [0, 0, 0, 0];
-
 // Check for Health
 var CkAliens = arrAliens.map(function(health){
 	return health.health
@@ -209,8 +206,24 @@ var underAttack =  function (shooter,victim){
 	 
 	} else {
 
+		// Ship vanishes when destroyed
 		if (victim.health < 0){
 			victim.unit.css('background', 'transparent');
+
+				//Ship taken out of array for selection
+				if (victim instanceof Alien){
+					
+					arrAliens = arrAliens.filter(function(health){
+					return health.health > 0;
+					});
+				
+				} else {
+
+					arrWraiths = arrWraiths.filter(function(health){
+						return health.health > 0;
+					});
+				}
+
 		}
 	
 	} 
