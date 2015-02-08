@@ -108,18 +108,20 @@ input{
 // General Prompt
 
 .general{
-  width: 1000px;
-  height: 260px;
+  width: 500px;
+  height: 650px;
   background-color: black;
   border: 4px double gold;
   border-radius: 5px;
-  margin: 100px 0px 0px 100px;
+  margin: 15px 0px 0px 350px;
   position: absolute;
   z-index: 100;
     img{
-      float: left;
-      margin: 13px 5px 0px 10px;
+      margin: 50px 5px 0px 10px;
       border: 1px solid gold;
+    }
+    p{
+      margin: 15px 25px 0px 25px;
     }
     button{
       background: black;
@@ -127,7 +129,7 @@ input{
       border: 1px solid gold;
       border-radius: 100px;
       padding: 10px;
-      margin: 30px 0 0 0;
+      margin: 200px 0 0 0;
     }  
      button:hover{
           background: yellow;
@@ -213,8 +215,24 @@ input{
 //   Winning Screens
 // ===================
 
-.win-screen{
+.gen-congrat{
   display: none;
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 100px;
+  border: 4px double gold;
+    button{
+      background: black;
+      color: gold;
+      border: 1px solid gold;
+      border-radius: 100px;
+      padding: 10px;
+      margin: 30px 0 10px 0;
+    }
+    button:hover{
+      color: black;
+      background: yellow;
+    }
 }
 .on-win{
   display:block;

@@ -28,6 +28,8 @@ $('#done').on('click', function(){
 	$('.instructions').removeClass('instructions-active');
 });
 
+
+
 // =====================
 //     Key Variables
 // =====================
@@ -227,7 +229,7 @@ var underAttack =  function (shooter,victim){
 
 		if (arrAliens.length === 0){
 			$('.outer-container').addClass('hidden')
-			$('.win-screen').addClass('on-win')
+			$('.gen-congrat').addClass('on-win')
 		
 		} else {
 
@@ -243,12 +245,6 @@ var underAttack =  function (shooter,victim){
 		}
 	
 	} 
-
-
-
-
-	
-	
 
 };
 
