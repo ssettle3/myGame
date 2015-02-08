@@ -19,10 +19,11 @@
     <!-- endbuild -->
 
   </head>
-  <audio controls autoplay loop>
-  <source src="audio/Battle-Music.mp3" type="audio/mp3">
-</audio>
   <body>
+  <div class="outer-container">
+    <audio controls autoplay loop>
+      <source src="audio/Battle-Music.mp3" type="audio/mp3">
+    </audio>
   <!-- Main Menu Screen -->
     <div class="menu-container">
       <div class="menu-backdrop">
@@ -86,7 +87,18 @@
 
       </div>
     </div>
-
+  </div>
+    <!-- Winning Container -->
+    <div class="win-screen">
+      <h1> You have Defended Earth!</h1>
+      <h1>We are safe ... until next time!</h1>
+    </div>
+    <div class="loose-screen">
+      <h1> You have lost!</h1>
+      <embed width="854" height="510" src="https://www.youtube.com/embed/-Xra9KznK8I?autoplay=1&cc_load_policy=1" frameborder="0" allowfullscreen></embed>
+    </div>
+    <!-- Loosing Container -->
+  
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>

@@ -208,3 +208,20 @@ input{
       color: black;
     }
 }
+
+// ===================
+//   Winning Screens
+// ===================
+
+.win-screen{
+  display: none;
+}
+.on-win{
+  display:block;
+}
+.loose-screen{
+  display: none;
+}
+.on-loose{
+  display: block;
+}

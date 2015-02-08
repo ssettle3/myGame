@@ -207,7 +207,7 @@ var underAttack =  function (shooter,victim){
 	} else {
 
 		// Ship vanishes when destroyed
-		if (victim.health < 0){
+		if (victim.health <= 0){
 			victim.unit.css('background', 'transparent');
 
 				//Ship taken out of array for selection
@@ -222,7 +222,23 @@ var underAttack =  function (shooter,victim){
 					arrWraiths = arrWraiths.filter(function(health){
 						return health.health > 0;
 					});
+				
 				}
+
+		if (arrAliens.length === 0){
+			$('.outer-container').addClass('hidden')
+			$('.win-screen').addClass('on-win')
+		
+		} else {
+
+			if(arrWraiths.length === 0){
+				$('.outer-container').addClass('hidden')
+				$('.win-screen').addClass('on-loose')
+			}
+
+		}
+
+
 
 		}
 	
