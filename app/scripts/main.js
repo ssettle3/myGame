@@ -199,7 +199,7 @@ var underAttack =  function (shooter,victim){
 		console.log(victim.name + "'s health is now " + victim.health);
 
 			if (victim instanceof Alien){
-				underAttack(victim, shooter);
+				underAttack(selectAlien(), selectWraith());
 				
 				if (victim.health <= 0){
 					console.log(victim.name + " was just shot down!")
