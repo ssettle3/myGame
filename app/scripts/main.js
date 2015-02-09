@@ -72,7 +72,7 @@ var Alien = function (details){
 	var det = details || {};
 
 	this.name = det.name;
-	this.health = 100;
+	this.health = 125;
 	this.unit = det.unit;
 };
 
@@ -235,7 +235,7 @@ var underAttack =  function (shooter,victim){
 
 			if(arrWraiths.length === 0){
 				$('.outer-container').addClass('hidden')
-				$('.win-screen').addClass('on-loose')
+				$('.loose-screen').addClass('on-loose')
 			}
 
 		}

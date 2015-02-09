@@ -239,6 +239,18 @@ input{
 }
 .loose-screen{
   display: none;
+    button{
+      background: black;
+      color: gold;
+      border: 1px solid gold;
+      border-radius: 100px;
+      padding: 10px;
+      margin: 30px 0 10px 0;
+    }
+    button:hover{
+      color: black;
+      background: yellow;
+    }
 }
 .on-loose{
   display: block;
