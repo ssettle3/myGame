@@ -176,7 +176,7 @@ var underAttack =  function (shooter,victim){
 
 	// Dealing Damage
 	if (shooter.health > 0){
-		damageDealt = _.random(20,35)
+		damageDealt = _.random(20,45)
 	} else {
 		damageDealt = 0;
 		console.log(shooter.name + " is dead!")
